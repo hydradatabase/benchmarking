@@ -1,0 +1,46 @@
+pgbench (14.7 (Ubuntu 14.7-1.pgdg22.04+1))
+transaction type: multiple scripts
+scaling factor: 1
+query mode: simple
+number of clients: 100
+number of threads: 10
+duration: 900 s
+number of transactions actually processed: 27720002
+latency average = 3.247 ms
+initial connection time = 65.319 ms
+tps = 30799.780122 (without initial connection time)
+SQL script 1: insert.sql
+ - weight: 1 (targets 2.9% of total)
+ - 813855 transactions (2.9% of total, tps = 904.276812)
+ - latency average = 0.979 ms
+ - latency stddev = 0.553 ms
+SQL script 2: select-account.sql
+ - weight: 10 (targets 29.4% of total)
+ - 8149327 transactions (29.4% of total, tps = 9054.742483)
+ - latency average = 0.082 ms
+ - latency stddev = 0.027 ms
+SQL script 3: select-branch.sql
+ - weight: 10 (targets 29.4% of total)
+ - 8147549 transactions (29.4% of total, tps = 9052.766942)
+ - latency average = 0.140 ms
+ - latency stddev = 0.100 ms
+SQL script 4: select-teller.sql
+ - weight: 10 (targets 29.4% of total)
+ - 8145972 transactions (29.4% of total, tps = 9051.014732)
+ - latency average = 0.086 ms
+ - latency stddev = 0.037 ms
+SQL script 5: update-account.sql
+ - weight: 1 (targets 2.9% of total)
+ - 811964 transactions (2.9% of total, tps = 902.175717)
+ - latency average = 0.994 ms
+ - latency stddev = 0.581 ms
+SQL script 6: update-branches.sql
+ - weight: 1 (targets 2.9% of total)
+ - 815018 transactions (2.9% of total, tps = 905.569025)
+ - latency average = 104.294 ms
+ - latency stddev = 114.599 ms
+SQL script 7: update-tellers.sql
+ - weight: 1 (targets 2.9% of total)
+ - 813232 transactions (2.9% of total, tps = 903.584595)
+ - latency average = 1.059 ms
+ - latency stddev = 1.409 ms

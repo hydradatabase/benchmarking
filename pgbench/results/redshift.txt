@@ -1,0 +1,55 @@
+pgbench (16devel, server 8.0.2)
+transaction type: multiple scripts
+scaling factor: 1
+query mode: simple
+number of clients: 100
+number of threads: 10
+maximum number of tries: 1
+duration: 900 s
+number of transactions actually processed: 14487
+number of failed transactions: 0 (0.000%)
+latency average = 6684.385 ms
+initial connection time = 967.259 ms
+tps = 14.960239 (without initial connection time)
+SQL script 1: insert.sql
+ - weight: 1 (targets 2.9% of total)
+ - 460 transactions (3.2% of total, tps = 0.475027)
+ - number of failed transactions: 0 (0.000%)
+ - latency average = 9707.966 ms
+ - latency stddev = 11775.158 ms
+SQL script 2: select-account.sql
+ - weight: 10 (targets 29.4% of total)
+ - 4254 transactions (29.4% of total, tps = 4.392963)
+ - number of failed transactions: 0 (0.000%)
+ - latency average = 42.857 ms
+ - latency stddev = 73.328 ms
+SQL script 3: select-branch.sql
+ - weight: 10 (targets 29.4% of total)
+ - 4141 transactions (28.6% of total, tps = 4.276272)
+ - number of failed transactions: 0 (0.000%)
+ - latency average = 21.239 ms
+ - latency stddev = 50.476 ms
+SQL script 4: select-teller.sql
+ - weight: 10 (targets 29.4% of total)
+ - 4350 transactions (30.0% of total, tps = 4.492099)
+ - number of failed transactions: 0 (0.000%)
+ - latency average = 34.356 ms
+ - latency stddev = 74.319 ms
+SQL script 5: update-account.sql
+ - weight: 1 (targets 2.9% of total)
+ - 419 transactions (2.9% of total, tps = 0.432687)
+ - number of failed transactions: 0 (0.000%)
+ - latency average = 11851.205 ms
+ - latency stddev = 10929.245 ms
+SQL script 6: update-branches.sql
+ - weight: 1 (targets 2.9% of total)
+ - 412 transactions (2.8% of total, tps = 0.425459)
+ - number of failed transactions: 0 (0.000%)
+ - latency average = 70728.595 ms
+ - latency stddev = 17398.367 ms
+SQL script 7: update-tellers.sql
+ - weight: 1 (targets 2.9% of total)
+ - 451 transactions (3.1% of total, tps = 0.465733)
+ - number of failed transactions: 0 (0.000%)
+ - latency average = 120455.178 ms
+ - latency stddev = 32924.626 ms

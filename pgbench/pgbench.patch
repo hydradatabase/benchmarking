@@ -1,0 +1,31 @@
+diff --git a/src/bin/pgbench/pgbench.c b/src/bin/pgbench/pgbench.c
+index 47b2c87f7f..fe459265e7 100644
+--- a/src/bin/pgbench/pgbench.c
++++ b/src/bin/pgbench/pgbench.c
+@@ -4780,8 +4780,8 @@ initCreateTables(PGconn *con)
+ 	static const struct ddlinfo DDLs[] = {
+ 		{
+ 			"pgbench_history",
+-			"tid int,bid int,aid    int,delta int,mtime timestamp,filler char(22)",
+-			"tid int,bid int,aid bigint,delta int,mtime timestamp,filler char(22)",
++			"tid int,bid int,aid    int,\"delta\" int,mtime timestamp,filler char(22)",
++			"tid int,bid int,aid bigint,\"delta\" int,mtime timestamp,filler char(22)",
+ 			0
+ 		},
+ 		{
+@@ -4854,11 +4854,10 @@ initCreateTables(PGconn *con)
+ static void
+ initTruncateTables(PGconn *con)
+ {
+-	executeStatement(con, "truncate table "
+-					 "pgbench_accounts, "
+-					 "pgbench_branches, "
+-					 "pgbench_history, "
+-					 "pgbench_tellers");
++	executeStatement(con, "truncate table pgbench_accounts");
++	executeStatement(con, "truncate table pgbench_branches");
++	executeStatement(con, "truncate table pgbench_history");
++	executeStatement(con, "truncate table pgbench_tellers");
+ }
+ 
+ /*
